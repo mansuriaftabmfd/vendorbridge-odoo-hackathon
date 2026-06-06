@@ -14,6 +14,14 @@ const ROLES: { value: UserRole; label: string; desc: string; icon: string; color
   { value: 'admin', label: 'Admin', desc: 'Full system management', icon: '🔐', color: 'border-border', activeColor: 'border-purple-500 bg-purple-500/10 ring-2 ring-purple-500/30' },
 ]
 
+// Demo accounts — all use Password@123
+const DEMO_ACCOUNTS = [
+  { email: 'admin@vendorbridge.com',       role: 'Admin',                password: 'Password@123' },
+  { email: 'manager@vendorbridge.com',     role: 'Manager',              password: 'Password@123' },
+  { email: 'procurement@vendorbridge.com', role: 'Procurement Officer',  password: 'Password@123' },
+  { email: 'vendor@vendorbridge.com',      role: 'Vendor',               password: 'Password@123' },
+]
+
 // Role → dashboard redirect
 const ROLE_ROUTES: Record<UserRole, string> = {
   procurement_officer: '/dashboard',
@@ -175,15 +183,26 @@ export function LoginForm() {
           )}
         </button>
 
-        {/* Demo Credentials */}
-        <div className="p-3 bg-surface-layer-1 border border-border rounded-lg">
-          <p className="text-xs font-semibold text-foreground mb-2">🧪 Demo Accounts</p>
-          <div className="grid grid-cols-2 gap-1 text-xs text-muted-foreground">
-            <span>admin@vendorbridge.com</span><span className="font-mono">Admin@123!</span>
-            <span>manager@vendorbridge.com</span><span className="font-mono">Manager@123!</span>
-            <span>procurement@vendorbridge.com</span><span className="font-mono">Officer@123!</span>
-            <span>vendor@vendorbridge.com</span><span className="font-mono">Vendor@123!</span>
+        {/* Demo Credentials — clickable to auto-fill */}
+        <div className="p-3 bg-surface-layer-1 border border-border rounded-xl">
+          <p className="text-xs font-semibold text-foreground mb-2">🧪 Demo Accounts <span className="text-muted-foreground font-normal">(click to auto-fill)</span></p>
+          <div className="space-y-1">
+            {DEMO_ACCOUNTS.map(acc => (
+              <button
+                key={acc.email}
+                type="button"
+                onClick={() => { setEmail(acc.email); setPassword(acc.password); setLoginError(null); }}
+                className="w-full flex items-center justify-between px-2 py-1.5 rounded-lg hover:bg-surface-layer-2 text-left transition-colors group"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold text-primary w-28 truncate">{acc.role}</span>
+                  <span className="text-xs text-muted-foreground truncate">{acc.email}</span>
+                </div>
+                <span className="text-xs font-mono text-muted-foreground group-hover:text-foreground">{acc.password}</span>
+              </button>
+            ))}
           </div>
+          <p className="text-xs text-amber-500 mt-2">⚠️ All passwords: <span className="font-mono font-bold">Password@123</span></p>
         </div>
       </form>
 

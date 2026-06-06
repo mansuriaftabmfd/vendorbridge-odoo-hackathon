@@ -226,3 +226,44 @@
     @apply rounded-[var(--radius)] border border-border bg-card;
   }
 }
+
+/* ─── Global Select / Input Dark-Mode Fix ────────────────────────────── */
+select {
+  background-color: var(--surface-layer-1);
+  color: var(--foreground);
+  border-color: var(--border);
+}
+
+select option {
+  background-color: var(--surface-layer-1);
+  color: var(--foreground);
+}
+
+/* Fix date input calendar icon color in dark mode */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: var(--calendar-icon-filter, none);
+}
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(0.8);
+}
+
+/* ─── Scrollbar Theming ────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--surface-layer-1); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted-foreground); }
+
+/* ─── Focus ring polish ─────────────────────────────────────────────────── */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary);
+  border-color: var(--primary);
+}
+
+/* ─── Smooth page transitions ───────────────────────────────────────────── */
+* { transition-property: background-color, border-color, color; transition-duration: 150ms; }
+button, a { transition: all 150ms ease; }
+
+/* ─── Table row hover ───────────────────────────────────────────────────── */
+tbody tr:hover { background-color: var(--surface-layer-2); }
+
