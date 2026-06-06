@@ -1,0 +1,228 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-geist-sans), 'Geist Fallback';
+  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* VendorBridge Color System - Light Mode */
+:root {
+  /* Primary Backgrounds */
+  --background: #F2F0ED;
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  
+  /* Brand Colors */
+  --primary: #DD7057;
+  --primary-foreground: #FFFFFF;
+  --secondary: #D49B7D;
+  --secondary-foreground: #FFFFFF;
+  --accent: #A8C4B0;
+  --accent-foreground: #1A1A1A;
+  
+  /* Surface Layers */
+  --surface-layer-1: #F9F8F6;
+  --surface-layer-2: #F2F0ED;
+  --surface-layer-3: #E8E5E0;
+  --surface-layer-4: #D9D5CF;
+  
+  /* Semantic Colors */
+  --status-active: #4A9B5C;
+  --status-pending: #D4AF37;
+  --status-blocked: #E86A6A;
+  --status-approved: #4A9B5C;
+  
+  /* Utility Colors */
+  --muted: #E8E5E0;
+  --muted-foreground: #6B6B6B;
+  --border: #D9D5CF;
+  --input: #F9F8F6;
+  --destructive: #E86A6A;
+  --accent-foreground: #1A1A1A;
+  --ring: #A8C4B0;
+  
+  /* Chart Colors */
+  --chart-1: #DD7057;
+  --chart-2: #A8C4B0;
+  --chart-3: #D49B7D;
+  --chart-4: #C9A878;
+  --chart-5: #8B7D6B;
+  
+  /* Sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1A1A1A;
+  --sidebar-primary: #DD7057;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #A8C4B0;
+  --sidebar-accent-foreground: #1A1A1A;
+  --sidebar-border: #D9D5CF;
+  --sidebar-ring: #A8C4B0;
+  
+  --radius: 0.875rem;
+}
+
+/* VendorBridge Color System - Dark Mode */
+.dark {
+  /* Primary Backgrounds */
+  --background: #272233;
+  --foreground: #F5F1ED;
+  --card: #3A3641;
+  --card-foreground: #F5F1ED;
+  --popover: #3A3641;
+  --popover-foreground: #F5F1ED;
+  
+  /* Brand Colors */
+  --primary: #DD7057;
+  --primary-foreground: #272233;
+  --secondary: #D49B7D;
+  --secondary-foreground: #272233;
+  --accent: #A8C4B0;
+  --accent-foreground: #272233;
+  
+  /* Surface Layers */
+  --surface-layer-1: #3A3641;
+  --surface-layer-2: #42363F;
+  --surface-layer-3: #4E4651;
+  --surface-layer-4: #5A525C;
+  
+  /* Semantic Colors */
+  --status-active: #5CB85C;
+  --status-pending: #FFD966;
+  --status-blocked: #FF6B6B;
+  --status-approved: #5CB85C;
+  
+  /* Utility Colors */
+  --muted: #4E4651;
+  --muted-foreground: #B8B4AF;
+  --border: #4E4651;
+  --input: #3A3641;
+  --destructive: #FF6B6B;
+  --accent-foreground: #272233;
+  --ring: #A8C4B0;
+  
+  /* Chart Colors */
+  --chart-1: #DD7057;
+  --chart-2: #A8C4B0;
+  --chart-3: #D49B7D;
+  --chart-4: #C9A878;
+  --chart-5: #8B7D6B;
+  
+  /* Sidebar */
+  --sidebar: #213241;
+  --sidebar-foreground: #F5F1ED;
+  --sidebar-primary: #DD7057;
+  --sidebar-primary-foreground: #272233;
+  --sidebar-accent: #A8C4B0;
+  --sidebar-accent-foreground: #213241;
+  --sidebar-border: #2F3D4C;
+  --sidebar-ring: #A8C4B0;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans bg-background;
+  }
+}
+
+/* VendorBridge Surface Depth System */
+@layer utilities {
+  .surface-layer-1 {
+    @apply bg-[var(--surface-layer-1)];
+  }
+  .surface-layer-2 {
+    @apply bg-[var(--surface-layer-2)];
+  }
+  .surface-layer-3 {
+    @apply bg-[var(--surface-layer-3)];
+  }
+  .surface-layer-4 {
+    @apply bg-[var(--surface-layer-4)];
+  }
+  
+  /* Status Colors */
+  .status-active {
+    @apply text-[var(--status-active)];
+  }
+  .status-pending {
+    @apply text-[var(--status-pending)];
+  }
+  .status-blocked {
+    @apply text-[var(--status-blocked)];
+  }
+  .status-approved {
+    @apply text-[var(--status-approved)];
+  }
+  
+  .badge-active {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium;
+  }
+  .badge-active {
+    @apply bg-[var(--status-active)]/10 text-[var(--status-active)];
+  }
+  .badge-pending {
+    @apply bg-[var(--status-pending)]/10 text-[var(--status-pending)];
+  }
+  .badge-blocked {
+    @apply bg-[var(--status-blocked)]/10 text-[var(--status-blocked)];
+  }
+  .badge-approved {
+    @apply bg-[var(--status-approved)]/10 text-[var(--status-approved)];
+  }
+  
+  /* Card base styling */
+  .card-base {
+    @apply rounded-[var(--radius)] border border-border bg-card;
+  }
+}
