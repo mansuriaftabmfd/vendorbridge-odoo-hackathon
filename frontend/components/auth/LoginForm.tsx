@@ -192,13 +192,11 @@ export function LoginForm() {
                 key={acc.email}
                 type="button"
                 onClick={() => { setEmail(acc.email); setPassword(acc.password); setLoginError(null); }}
-                className="w-full flex items-center justify-between px-2 py-1.5 rounded-lg hover:bg-surface-layer-2 text-left transition-colors group"
+                className="w-full grid grid-cols-3 items-center px-2 py-1.5 rounded-lg hover:bg-surface-layer-2 text-left transition-colors group"
               >
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-semibold text-primary w-28 truncate">{acc.role}</span>
-                  <span className="text-xs text-muted-foreground truncate">{acc.email}</span>
-                </div>
-                <span className="text-xs font-mono text-muted-foreground group-hover:text-foreground">{acc.password}</span>
+                <span className="text-xs font-bold text-primary">{acc.role}</span>
+                <span className="text-xs text-muted-foreground truncate col-span-1">{acc.email}</span>
+                <span className="text-xs font-mono text-muted-foreground text-right group-hover:text-foreground">{acc.password}</span>
               </button>
             ))}
           </div>
