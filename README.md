@@ -10,8 +10,6 @@
 
 **A full-stack Procurement & Vendor Management ERP built for the Odoo Hackathon 2026**
 
-[🌐 Live Demo](#) · [📖 Docs](#architecture) · [🐛 Report Bug](https://github.com/mansuriaftabmfd/vendorbridge-odoo-hackathon/issues)
-
 </div>
 
 ---
